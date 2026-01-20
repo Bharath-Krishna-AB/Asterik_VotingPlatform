@@ -13,7 +13,7 @@ const Navbar = () => {
                 <div className="w-12 h-12 rounded-xl bg-black flex items-center justify-center rotate-6 group-hover:rotate-12 transition-transform duration-300 shadow-lg shadow-primary/20">
                     <Asterisk className="text-primary w-6 h-6" />
                 </div>
-                <span className="font-bold text-xl tracking-tight hidden md:block">VOTE.</span>
+                <span className="font-bold text-xl tracking-tight hidden md:block">ASTERIK</span>
             </div>
 
             {/* User Actions */}
