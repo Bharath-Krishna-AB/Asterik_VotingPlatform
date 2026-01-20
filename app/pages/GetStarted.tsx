@@ -3,8 +3,8 @@ import { ArrowRight, MoveRight } from 'lucide-react'
 const GetStarted = () => {
     return (
         <main className="w-full min-h-screen bg-primary flex flex-col md:flex-row font-[Panchang,sans-serif] p-5 overflow-x-hidden">
-            <div className="w-full h-[60vh] md:w-[55vw] md:h-screen flex justify-center items-center">
-                <img src="/images/GetStartedHero.png" alt="GetStartedHero" className='w-[80%] h-[80%] object-contain' />
+            <div className="w-full h-[60vh] md:w-[55vw] md:h-screen flex justify-center items-end">
+                <img src="/images/GetStarted-Hero1.png" alt="GetStartedHero" className='w-[80%] h-[80%] object-contain' />
             </div>
             <div className="w-full h-auto min-h-[40vh] md:w-[45vw] md:h-screen flex flex-col justify-center items-center md:items-start gap-10 py-10 md:py-0">
                 <div className="flex flex-col gap-4 text-center md:text-left">
