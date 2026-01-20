@@ -1,7 +1,7 @@
 import React from 'react'
 import { Asterisk, ArrowRight, Mail, Lock } from 'lucide-react'
 
-const Login = () => {
+const SignIn = () => {
   return (
     <div className="w-full min-h-screen flex justify-center items-center bg-[#FAFAFA] text-neutral-900 selection:bg-primary selection:text-black font-[panchang,sans-serif]">
       <main className="w-full max-w-[420px] bg-white border border-neutral-200 rounded-[32px] p-8 md:p-10 shadow-xl shadow-black/5 mx-4 flex flex-col gap-8">
@@ -49,7 +49,7 @@ const Login = () => {
           </div>
 
           <button type="submit" className='w-full h-14 bg-primary rounded-2xl flex items-center justify-center gap-2 font-[panchang,sans-serif] font-bold text-sm tracking-wide text-black hover:brightness-95 active:scale-[0.98] transition-all group shadow-sm'>
-            <span>LOGIN</span>
+            <span>SignIn</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
         </form>
@@ -61,7 +61,7 @@ const Login = () => {
           <div className="h-px bg-neutral-200 flex-1"></div>
         </div>
 
-        {/* Social Login */}
+        {/* Social SignIn */}
         <div className="flex flex-col gap-3">
           <button className="w-full h-14 rounded-2xl border border-neutral-200 bg-white hover:border-black transition-colors flex items-center justify-center gap-3 group">
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -91,4 +91,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default SignIn
