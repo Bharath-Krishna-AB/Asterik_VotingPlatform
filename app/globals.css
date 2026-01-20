@@ -1,8 +1,10 @@
+@import url('https://api.fontshare.com/v2/css?f[]=panchang@200,300,400,500,600,700,800&format=woff2&display=swap');
 @import "tailwindcss";
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --color-primary: #bed868;
 }
 
 @theme inline {
@@ -10,12 +12,15 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-gambarino: var(--font-gambarino);
+  --font-panchang: Panchang, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --color-primary: #bed868;
   }
 }
 
