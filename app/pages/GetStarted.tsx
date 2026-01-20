@@ -2,13 +2,13 @@ import { ArrowRight, Asterisk } from 'lucide-react'
 
 const GetStarted = () => {
     return (
-        <main className="w-full min-h-screen bg-primary flex flex-col md:flex-row font-[Panchang,sans-serif] p-5 overflow-x-hidden">
+        <main className="w-full min-h-screen bg-primary flex flex-col md:flex-row font-[Panchang,sans-serif] p-5 overflow-x-hidden selection:bg-black selection:text-primary">
             <div className="w-full h-[60vh] md:w-[55vw] md:h-screen flex justify-center items-end">
-                <img src="/images/GetStarted-Hero1.png" alt="GetStartedHero" className='w-[80%] h-[80%] object-contain' />
+                <img src="/images/GetStarted-Hero1.png" alt="GetStartedHero" className='w-[80%] h-[80%] object-contain select-none' />
             </div>
             <div className="w-full h-auto min-h-[40vh] md:w-[45vw] md:h-screen flex flex-col justify-center items-center md:items-start gap-10 py-10 md:py-0">
                 <div className="flex flex-col gap-4 text-center md:text-left">
-                    <div className='font-bold text-5xl md:text-7xl leading-tight tracking-tighter text-neutral-900'>
+                    <div className='font-bold text-5xl md:text-7xl leading-tight tracking-tighter text-neutral-900 '>
                         <span className='flex flex-wrap items-center justify-center md:justify-start gap-3 md:gap-8'>
                             Where Every Vote
                             <div className="w-16 h-16 rounded-2xl bg-black flex items-center justify-center rotate-6 hover:rotate-12 transition-transform duration-300 shadow-lg shadow-primary/20">
