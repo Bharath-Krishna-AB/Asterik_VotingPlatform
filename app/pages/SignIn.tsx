@@ -8,7 +8,7 @@ const SignIn = () => {
 
         {/* Header */}
         <div className="flex flex-col items-center text-center gap-5">
-          <div className="w-16 h-16 rounded-2xl bg-black flex items-center justify-center rotate-3 hover:rotate-6 transition-transform duration-300 shadow-lg shadow-primary/20">
+          <div className="w-16 h-16 rounded-2xl bg-black flex items-center justify-center rotate-6 hover:rotate-12 transition-transform duration-300 shadow-lg shadow-primary/20">
             <Asterisk className="text-primary w-8 h-8" />
           </div>
           <div className="space-y-2">
@@ -49,7 +49,7 @@ const SignIn = () => {
           </div>
 
           <button type="submit" className='w-full h-14 bg-primary rounded-2xl flex items-center justify-center gap-2 font-[panchang,sans-serif] font-bold text-sm tracking-wide text-black hover:brightness-95 active:scale-[0.98] transition-all group shadow-sm'>
-            <span>SignIn</span>
+            <span>SIGN IN</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
         </form>

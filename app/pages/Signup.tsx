@@ -8,7 +8,7 @@ const Signup = () => {
 
                 {/* Header */}
                 <div className="flex flex-col items-center text-center gap-5">
-                    <div className="w-16 h-16 rounded-2xl bg-black flex items-center justify-center rotate-3 hover:rotate-6 transition-transform duration-300 shadow-lg shadow-primary/20">
+                    <div className="w-16 h-16 rounded-2xl bg-black flex items-center justify-center rotate-6 hover:rotate-12 transition-transform duration-300 shadow-lg shadow-primary/20">
                         <Asterisk className="text-primary w-8 h-8" />
                     </div>
                     <div className="space-y-2">
@@ -83,7 +83,7 @@ const Signup = () => {
                 {/* Footer */}
                 <div className="pt-6 border-t border-neutral-100 flex justify-center">
                     <p className='text-sm text-neutral-500 font-medium'>
-                        Already have an account? <a href="#" className="text-black underline underline-offset-4 decoration-2 decoration-primary hover:decoration-black transition-all">Login</a>
+                        Already have an account? <a href="#" className="text-black underline underline-offset-4 decoration-2 decoration-primary hover:decoration-black transition-all">Sign In</a>
                     </p>
                 </div>
             </main>
