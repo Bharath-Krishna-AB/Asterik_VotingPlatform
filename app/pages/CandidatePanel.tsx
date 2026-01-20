@@ -4,7 +4,7 @@ import Candidate from '../components/Candidate'
 
 const CandidatePage = () => {
     return (
-        <div className="bg-background w-screen">
+        <div className="bg-foreground w-screen">
             <Navbar />
             <div className="grid grid-cols-3 gap-4 place-items-center">
                 <Candidate />

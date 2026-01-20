@@ -44,10 +44,10 @@ const Candidate: React.FC<CandidatePanelProps> = ({
                 </p>
 
                 {/* Action Button */}
-                <button className="w-full h-14 bg-black text-white rounded-2xl flex items-center justify-between px-6 group/btn hover:bg-neutral-800 transition-colors">
-                    <span className="font-bold text-sm tracking-wide">VIEW PROFILE</span>
-                    <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover/btn:bg-white group-hover/btn:text-black transition-colors">
-                        <ArrowUpRight className="w-4 h-4" />
+                <button className="w-full h-14 bg-black text-white rounded-full flex items-center justify-between px-6 group/btn hover:scale-105 hover:bg-neutral-800 transition ease-in-out duration-300">
+                    <span className="font-black text-m tracking-tighter leading-relaxed">VIEW PROFILE</span>
+                    <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center  group-hover/btn:rotate-45 transition duration-300 translate-x-4">
+                        <ArrowUpRight className="w-5 h-5 text-black" />
                     </div>
                 </button>
             </div>
