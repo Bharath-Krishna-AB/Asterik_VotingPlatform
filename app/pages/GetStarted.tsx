@@ -1,4 +1,4 @@
-import { ArrowRight, MoveRight } from 'lucide-react'
+import { ArrowRight, Asterisk } from 'lucide-react'
 
 const GetStarted = () => {
     return (
@@ -9,11 +9,11 @@ const GetStarted = () => {
             <div className="w-full h-auto min-h-[40vh] md:w-[45vw] md:h-screen flex flex-col justify-center items-center md:items-start gap-10 py-10 md:py-0">
                 <div className="flex flex-col gap-4 text-center md:text-left">
                     <div className='font-bold text-5xl md:text-7xl leading-tight tracking-tighter text-neutral-900'>
-                        <span className='flex flex-wrap items-center justify-center md:justify-start gap-3 md:gap-4'>
+                        <span className='flex flex-wrap items-center justify-center md:justify-start gap-3 md:gap-8'>
                             Where Every Vote
-                            <button className='bg-black w-20 h-10 md:w-24 md:h-14 rounded-full flex items-center justify-center hover:scale-105 transition-transform'>
-                                <MoveRight className="text-primary w-6 h-6 md:w-10 md:h-10" />
-                            </button>
+                            <div className="w-16 h-16 rounded-2xl bg-black flex items-center justify-center rotate-6 hover:rotate-12 transition-transform duration-300 shadow-lg shadow-primary/20">
+                                <Asterisk className="text-primary w-8 h-8" />
+                            </div>
                         </span>
                         Actually Counts.
                     </div>
