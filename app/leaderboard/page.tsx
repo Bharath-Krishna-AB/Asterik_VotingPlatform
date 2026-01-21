@@ -63,9 +63,9 @@ const LeaderboardPage = () => {
                         </div>
 
                         {/* Bottom Row: Widgets */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-[280px]">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-auto lg:h-[280px]">
                             {/* Champion Status Widget */}
-                            <div className="bg-[#D5EF36] rounded-[32px] p-8 flex flex-col justify-between relative overflow-hidden group cursor-pointer hover:scale-[1.02] transition-transform shadow-xl shadow-black/5 h-full">
+                            <div className="bg-[#D5EF36] rounded-[32px] p-8 flex flex-col justify-between relative overflow-hidden group cursor-pointer hover:scale-[1.02] transition-transform shadow-xl shadow-black/5 min-h-[280px] lg:min-h-0 h-full">
                                 <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
                                     <Crown className="w-32 h-32 rotate-12" />
                                 </div>
@@ -74,12 +74,12 @@ const LeaderboardPage = () => {
                                     <p className="font-medium text-black/80 text-sm mt-4">Current Leader leads by <span className="font-bold">209 votes</span> in the final tally.</p>
                                 </div>
                                 <div className="flex items-center gap-2 mt-4 font-bold uppercase tracking-wide border-b-2 border-black/20 self-start pb-1 text-xs">
-                                    View Source Data
+                                    View Candidate
                                 </div>
                             </div>
 
                             {/* Branding / Logo Widget */}
-                            <div className="bg-white rounded-[32px] p-8 flex flex-col items-center justify-center text-center relative overflow-hidden h-full shadow-xl shadow-black/5 border border-neutral-100 group">
+                            <div className="bg-white rounded-[32px] p-8 flex flex-col items-center justify-center text-center relative overflow-hidden min-h-[280px] lg:min-h-0 h-full shadow-xl shadow-black/5 border border-neutral-100 group">
                                 <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-20" />
 
                                 <div className="relative z-10 flex flex-col items-center gap-6">
@@ -100,7 +100,7 @@ const LeaderboardPage = () => {
                     {/* Right Column: Voters List (4 cols) */}
                     <div className="lg:col-span-4 h-full">
                         {/* Sticky sidebar that takes available height */}
-                        <div className="sticky top-24 h-[56.5vh] min-h-[400px]">
+                        <div className="lg:sticky lg:top-24 h-[500px] lg:h-[56.5vh] min-h-[400px]">
                             <VotersList />
                         </div>
                     </div>
