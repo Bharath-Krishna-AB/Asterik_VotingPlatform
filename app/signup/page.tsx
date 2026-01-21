@@ -1,6 +1,31 @@
-import { Asterisk, ArrowRight, Mail, Lock, User } from 'lucide-react'
+"use client"
 
-const page = () => {
+import { Asterisk, ArrowRight, Mail, Lock, User } from 'lucide-react'
+import { ChangeEvent, useState } from 'react';
+
+
+interface SignUpFormData {
+    name: string;
+    email: string;
+    password: string;
+}
+
+const page:React.FC = () => {
+
+    const [formData, setFormData] = useState<SignUpFormData>({
+        name: '',
+        email: '',
+        password: ''
+    })
+
+
+    const handleInputChange = (name:string,value:string) => {
+        setFormData((prev)=>({...prev,[name]:value}))
+    }
+
+    console.log(formData);
+    
+
     return (
         <div className="w-full min-h-screen flex justify-center items-center bg-[#FAFAFA] text-neutral-900 selection:bg-primary selection:text-black font-[panchang,sans-serif]">
             <main className="w-full max-w-[420px] bg-white border border-neutral-200 rounded-[32px] p-8 md:p-10 shadow-xl shadow-black/5 mx-4 flex flex-col gap-8">
@@ -26,6 +51,8 @@ const page = () => {
                             <input
                                 type="text"
                                 placeholder='Full Name'
+                                value={formData.name}
+                                onChange= {(e:ChangeEvent<HTMLInputElement>)=> handleInputChange("name",e.target.value)}
                                 className='w-full h-14 pl-12 pr-4 rounded-2xl border border-neutral-200 bg-neutral-50 outline-none focus:bg-white focus:border-black transition-all placeholder:text-neutral-400 font-medium'
                             />
                         </div>
@@ -34,6 +61,8 @@ const page = () => {
                             <input
                                 type="email"
                                 placeholder='Email Address'
+                                value={formData.email}
+                                onChange= {(e:ChangeEvent<HTMLInputElement>)=> handleInputChange("email",e.target.value)}
                                 className='w-full h-14 pl-12 pr-4 rounded-2xl border border-neutral-200 bg-neutral-50 outline-none focus:bg-white focus:border-black transition-all placeholder:text-neutral-400 font-medium'
                             />
                         </div>
@@ -42,6 +71,8 @@ const page = () => {
                             <input
                                 type="password"
                                 placeholder='Password'
+                                value={formData.password}
+                                onChange= {(e:ChangeEvent<HTMLInputElement>)=> handleInputChange("password",e.target.value)}
                                 className='w-full h-14 pl-12 pr-4 rounded-2xl border border-neutral-200 bg-neutral-50 outline-none focus:bg-white focus:border-black transition-all placeholder:text-neutral-400 font-medium'
                             />
                         </div>
