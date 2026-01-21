@@ -14,8 +14,8 @@ const Navbar = () => {
         <nav className="w-full h-24 bg-white/80 backdrop-blur-md border-b border-neutral-100 flex items-center justify-between px-6 md:px-12 sticky top-0 z-50 font-[panchang,sans-serif]">
             {/* Logo Section */}
             <div className="flex items-center gap-3 group cursor-pointer">
-                <div className="w-12 h-12 rounded-xl bg-black flex items-center justify-center rotate-6 group-hover:rotate-12 transition-transform duration-300 shadow-lg shadow-primary/20">
-                    <Asterisk className="text-primary w-6 h-6" />
+                <div className="w-10 h-10 rounded-xl bg-black flex items-center justify-center rotate-6 group-hover:rotate-12 transition-transform duration-300 shadow-lg shadow-primary/20">
+                    <Asterisk className="text-primary w-5 h-5" />
                 </div>
                 <span className="font-bold text-xl tracking-tight hidden md:block">ASTERIK</span>
             </div>
