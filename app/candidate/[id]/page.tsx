@@ -13,7 +13,6 @@ const CandidatePage = () => {
         {
             id: 1,
             name: "Bharath Krishna A B",
-            role: "Presidential Candidate",
             imageUrl: "/images/candidate1.jpeg",
             description: "A visionary leader committed to fostering innovation and inclusivity. With a strong background in technology and community service, Bharath aims to bridge the gap between students and administration.",
             manifesto: [
@@ -30,7 +29,6 @@ const CandidatePage = () => {
         {
             id: 2,
             name: "Navaneeth",
-            role: "Vice-Presidential Candidate",
             imageUrl: "/images/candidate2.png",
             description: "Dedicated to operational excellence and student welfare. Navaneeth brings a practical approach to problem-solving and a passion for creating a vibrant campus culture.",
             manifesto: [
@@ -66,7 +64,6 @@ const CandidatePage = () => {
             <CandidateDetails
                 candidateId={candidate.id}
                 name={candidate.name}
-                role={candidate.role}
                 imageUrl={candidate.imageUrl}
                 description={candidate.description}
                 manifesto={candidate.manifesto}

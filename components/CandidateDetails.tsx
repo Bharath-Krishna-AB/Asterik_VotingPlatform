@@ -4,7 +4,6 @@ import { ArrowUpRight, Github, Linkedin, CheckCircle2, BookOpen, User } from 'lu
 interface CandidateDetailsProps {
     candidateId?: number;
     name?: string;
-    role?: string;
     imageUrl?: string;
     description?: string;
     manifesto?: string[];
@@ -16,8 +15,8 @@ interface CandidateDetailsProps {
 }
 
 const CandidateDetails: React.FC<CandidateDetailsProps> = ({
+    candidateId,
     name,
-    role,
     imageUrl,
     description,
     manifesto,
@@ -33,7 +32,7 @@ const CandidateDetails: React.FC<CandidateDetailsProps> = ({
                     {/* Left Column - Profile & Actions */}
                     <div className="w-full lg:w-[400px] flex flex-col gap-8">
                         {/* Image Card */}
-                        <div className="relative aspect-[4/5] w-full rounded-[32px] overflow-hidden bg-white border border-neutral-200 shadow-xl shadow-black/5 group">
+                        <div className="relative aspect-[4/5] w-full rounded-[32px] overflow-hidden bg-white border border-neutral-200 shadow-xl shadow-black/5 group select-none cursor-pointer">
                             {imageUrl ? (
                                 <img src={imageUrl} alt={name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                             ) : (
@@ -46,20 +45,20 @@ const CandidateDetails: React.FC<CandidateDetailsProps> = ({
                             {/* Floating Socials */}
                             <div className="absolute bottom-6 left-6 flex gap-3">
                                 {socials.linkedin && (
-                                    <a href={socials.linkedin} target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-[#0077b5] hover:border-transparent transition-all group/social">
-                                        <Linkedin className="w-5 h-5 text-white" />
+                                    <a href={socials.linkedin} target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-primary hover:border-transparent transition-all group/social">
+                                        <Linkedin className="w-5 h-5 text-white group-hover/social:text-black" />
                                     </a>
                                 )}
                                 {socials.github && (
-                                    <a href={socials.github} target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-black hover:border-transparent transition-all group/social">
-                                        <Github className="w-5 h-5 text-white" />
+                                    <a href={socials.github} target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-primary hover:border-transparent transition-all group/social">
+                                        <Github className="w-5 h-5 text-white group-hover/social:text-black" />
                                     </a>
                                 )}
                             </div>
                         </div>
 
                         {/* Vote Button */}
-                        <button className="w-full h-20 bg-primary rounded-[24px] flex items-center justify-between px-8 group hover:brightness-95 active:scale-[0.98] transition-all shadow-lg shadow-black/5">
+                        <button className="w-full h-20 bg-primary rounded-[24px] flex items-center justify-between px-8 group hover:brightness-95 active:scale-[0.98] transition-all shadow-lg shadow-black/5 cursor-pointer">
                             <div className="flex flex-col items-start">
                                 <span className="text-xs font-bold uppercase tracking-widest text-neutral-800">Make your choice</span>
                                 <span className="text-2xl font-black text-black tracking-tight">VOTE NOW</span>
@@ -74,8 +73,8 @@ const CandidateDetails: React.FC<CandidateDetailsProps> = ({
                     <div className="flex-1 flex flex-col gap-10">
                         {/* Title Section */}
                         <div className="space-y-4">
-                            <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-neutral-200 bg-white shadow-sm">
-                                <span className="text-xs font-bold tracking-widest uppercase text-neutral-500">#{role ? role.split(' ').pop() : ""}</span>
+                            <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-neutral-200 bg-foreground shadow-sm select-none">
+                                <span className="text-xs font-bold tracking-widest uppercase text-primary">#Candidate {candidateId}</span>
                             </div>
                             <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-neutral-900 leading-[0.9] uppercase">
                                 {name}
@@ -108,8 +107,8 @@ const CandidateDetails: React.FC<CandidateDetailsProps> = ({
                         {/* Education / Info */}
                         <div className="space-y-6">
                             <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-xl bg-neutral-100 flex items-center justify-center">
-                                    <BookOpen className="w-5 h-5 text-neutral-600" />
+                                <div className="w-10 h-10 rounded-xl bg-black flex items-center justify-center">
+                                    <BookOpen className="w-5 h-5 text-primary" />
                                 </div>
                                 <h3 className="text-2xl font-bold uppercase tracking-tight">Background</h3>
                             </div>
