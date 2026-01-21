@@ -1,4 +1,4 @@
-import { ArrowRight, Asterisk } from 'lucide-react'
+import { ArrowRight , Sparkles } from 'lucide-react'
 import Link from 'next/link'
 
 const page = () => {
@@ -12,8 +12,8 @@ const page = () => {
                     <div className='font-bold text-5xl md:text-7xl leading-tight tracking-tighter text-neutral-900 '>
                         <span className='flex flex-wrap items-center justify-center md:justify-start gap-3 md:gap-8'>
                             Where Every Vote
-                            <div className="w-16 h-16 rounded-2xl bg-black flex items-center justify-center rotate-6 hover:rotate-12 transition-transform duration-300 shadow-lg shadow-primary/20">
-                                <Asterisk className="text-primary w-8 h-8" />
+                            <div className="w-16 h-16 rounded-xl bg-black flex items-center justify-center -rotate-6 hover:rotate-12 transition-transform duration-500 shadow-2xl shadow-neutral-200 cursor-pointer">
+                                <Sparkles className="text-[#D5EF36] w-8 h-8" />
                             </div>
                         </span>
                         Actually Counts.

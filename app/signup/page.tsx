@@ -1,6 +1,6 @@
 "use client"
 
-import { Asterisk, ArrowRight, Mail, Lock, User } from 'lucide-react'
+import { Asterisk, ArrowRight, Mail, Lock, User, Sparkles } from 'lucide-react'
 import { ChangeEvent, useState } from 'react';
 
 
@@ -10,7 +10,7 @@ interface SignUpFormData {
     password: string;
 }
 
-const page:React.FC = () => {
+const page: React.FC = () => {
 
     const [formData, setFormData] = useState<SignUpFormData>({
         name: '',
@@ -19,19 +19,19 @@ const page:React.FC = () => {
     })
 
 
-    const handleInputChange = (name:string,value:string) => {
-        setFormData((prev)=>({...prev,[name]:value}))
+    const handleInputChange = (name: string, value: string) => {
+        setFormData((prev) => ({ ...prev, [name]: value }))
     }
 
     console.log(formData);
 
     const handleSubmit = () => {
         try {
-            
+
         } catch (error) {
         }
     }
-    
+
 
     return (
         <div className="w-full min-h-screen flex justify-center items-center bg-[#FAFAFA] text-neutral-900 selection:bg-primary selection:text-black font-[panchang,sans-serif]">
@@ -39,8 +39,8 @@ const page:React.FC = () => {
 
                 {/* Header */}
                 <div className="flex flex-col items-center text-center gap-5">
-                    <div className="w-16 h-16 rounded-2xl bg-black flex items-center justify-center rotate-6 hover:rotate-12 transition-transform duration-300 shadow-lg shadow-primary/20">
-                        <Asterisk className="text-primary w-8 h-8" />
+                    <div className="w-16 h-16 rounded-xl bg-black flex items-center justify-center -rotate-6 hover:rotate-12 transition-transform duration-500 shadow-2xl shadow-neutral-200 cursor-pointer">
+                        <Sparkles className="text-[#D5EF36] w-7 h-7" />
                     </div>
                     <div className="space-y-2">
                         <h2 className='font-[Panchang] font-bold text-2xl tracking-tight'>Create Account</h2>
@@ -59,7 +59,7 @@ const page:React.FC = () => {
                                 type="text"
                                 placeholder='Full Name'
                                 value={formData.name}
-                                onChange= {(e:ChangeEvent<HTMLInputElement>)=> handleInputChange("name",e.target.value)}
+                                onChange={(e: ChangeEvent<HTMLInputElement>) => handleInputChange("name", e.target.value)}
                                 className='w-full h-14 pl-12 pr-4 rounded-2xl border border-neutral-200 bg-neutral-50 outline-none focus:bg-white focus:border-black transition-all placeholder:text-neutral-400 font-medium'
                             />
                         </div>
@@ -69,7 +69,7 @@ const page:React.FC = () => {
                                 type="email"
                                 placeholder='Email Address'
                                 value={formData.email}
-                                onChange= {(e:ChangeEvent<HTMLInputElement>)=> handleInputChange("email",e.target.value)}
+                                onChange={(e: ChangeEvent<HTMLInputElement>) => handleInputChange("email", e.target.value)}
                                 className='w-full h-14 pl-12 pr-4 rounded-2xl border border-neutral-200 bg-neutral-50 outline-none focus:bg-white focus:border-black transition-all placeholder:text-neutral-400 font-medium'
                             />
                         </div>
@@ -79,7 +79,7 @@ const page:React.FC = () => {
                                 type="password"
                                 placeholder='Password'
                                 value={formData.password}
-                                onChange= {(e:ChangeEvent<HTMLInputElement>)=> handleInputChange("password",e.target.value)}
+                                onChange={(e: ChangeEvent<HTMLInputElement>) => handleInputChange("password", e.target.value)}
                                 className='w-full h-14 pl-12 pr-4 rounded-2xl border border-neutral-200 bg-neutral-50 outline-none focus:bg-white focus:border-black transition-all placeholder:text-neutral-400 font-medium'
                             />
                         </div>
