@@ -1,14 +1,14 @@
 "use client"
 
 import { Asterisk, ArrowRight, Mail, Lock } from 'lucide-react'
-import {ChangeEvent, useState} from 'react'
+import {ChangeEvent, FormEvent, useState} from 'react'
 
 interface SignInFormData {
   email: string,
   password: string,
 }
 
-const SignIn: React.FC = () => {
+const page: React.FC = () => {
 
   const [formData, setFormData] = useState<SignInFormData>({
     email: "",
@@ -21,8 +21,18 @@ const SignIn: React.FC = () => {
       ...prevData,
       [name]: value,
     }));
-    console.log(formData);
   };
+
+  console.log(formData);
+
+  const handleSubmit = (e: FormEvent) => {
+    try {
+      
+    } catch (error) {
+      
+    }
+  }
+
 
   return (
     <div className="w-full min-h-screen flex justify-center items-center bg-[#FAFAFA] text-neutral-900 selection:bg-primary selection:text-black font-[panchang,sans-serif]">
@@ -42,7 +52,7 @@ const SignIn: React.FC = () => {
         </div>
 
         {/* Form */}
-        <form action="" className="flex flex-col gap-5">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-5">
           <div className="space-y-3">
             <div className="group relative">
               <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400 group-focus-within:text-black transition-colors" />
@@ -117,4 +127,4 @@ const SignIn: React.FC = () => {
   )
 }
 
-export default SignIn
+export default page

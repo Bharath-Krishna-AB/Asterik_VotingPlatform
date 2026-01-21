@@ -1,7 +1,6 @@
-import React from 'react'
 import { Asterisk, ArrowRight, Mail, Lock, User } from 'lucide-react'
 
-const Signup = () => {
+const page = () => {
     return (
         <div className="w-full min-h-screen flex justify-center items-center bg-[#FAFAFA] text-neutral-900 selection:bg-primary selection:text-black font-[panchang,sans-serif]">
             <main className="w-full max-w-[420px] bg-white border border-neutral-200 rounded-[32px] p-8 md:p-10 shadow-xl shadow-black/5 mx-4 flex flex-col gap-8">
@@ -91,4 +90,4 @@ const Signup = () => {
     )
 }
 
-export default Signup
+export default page

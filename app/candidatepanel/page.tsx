@@ -1,6 +1,6 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
-import Candidate from '../components/Candidate'
+import Navbar from '../../components/Navbar'
+import Candidate from '../../components/Candidate'
 
 const CandidatePage = () => {
     return (
