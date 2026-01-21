@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { ArrowUpRight, User, Linkedin } from 'lucide-react'
 
 interface CandidatePanelData {
@@ -41,9 +42,9 @@ const Candidate: React.FC<CandidatePanelData> = ({
                     <div className="flex items-center justify-between">
                         <h3 className="font-bold text-2xl leading-none tracking-tight">{name}</h3>
                         <a href={LinkedInUrl}>
-                        <div className="w-8 h-8 rounded-full bg-neutral-100 flex items-center justify-center hover:bg-[#0077b5] group/linkedin transition-colors cursor-pointer">
-                            <Linkedin className="w-4 h-4 text-neutral-600 group-hover/linkedin:text-white transition-colors" />
-                        </div>
+                            <div className="w-8 h-8 rounded-full bg-neutral-100 flex items-center justify-center hover:bg-[#0077b5] group/linkedin transition-colors cursor-pointer">
+                                <Linkedin className="w-4 h-4 text-neutral-600 group-hover/linkedin:text-white transition-colors" />
+                            </div>
                         </a>
                     </div>
                     <p className="text-sm font-medium text-neutral-500 uppercase tracking-wide">CANDIDATE</p>
@@ -54,12 +55,14 @@ const Candidate: React.FC<CandidatePanelData> = ({
                 </p>
 
                 {/* Action Button */}
-                <button className="w-full h-14 bg-black text-white rounded-full flex items-center justify-between px-6 group/btn hover:scale-105 hover:bg-neutral-800 transition ease-in-out duration-300">
-                    <span className="font-black text-m tracking-tighter leading-relaxed">VIEW PROFILE</span>
-                    <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center  group-hover/btn:rotate-45 transition duration-300 translate-x-4">
-                        <ArrowUpRight className="w-5 h-5 text-black" />
-                    </div>
-                </button>
+                <Link href={`/candidate/${candidateId}`} className="block w-full">
+                    <button className="w-full h-14 bg-black text-white rounded-full flex items-center justify-between px-6 group/btn hover:scale-105 hover:bg-neutral-800 transition ease-in-out duration-300">
+                        <span className="font-black text-m tracking-tighter leading-relaxed">VIEW PROFILE</span>
+                        <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center  group-hover/btn:rotate-45 transition duration-300 translate-x-4">
+                            <ArrowUpRight className="w-5 h-5 text-black" />
+                        </div>
+                    </button>
+                </Link>
             </div>
         </div>
     )
