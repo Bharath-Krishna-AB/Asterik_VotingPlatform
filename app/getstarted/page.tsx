@@ -1,6 +1,6 @@
 import { ArrowRight, Asterisk } from 'lucide-react'
 
-const GetStarted = () => {
+const page = () => {
     return (
         <main className="w-full min-h-screen bg-primary flex flex-col md:flex-row font-[Panchang,sans-serif] p-5 overflow-x-hidden selection:bg-black selection:text-primary">
             <div className="w-full h-[60vh] md:w-[55vw] md:h-screen flex justify-center items-end">
@@ -32,4 +32,4 @@ const GetStarted = () => {
     )
 }
 
-export default GetStarted
+export default page

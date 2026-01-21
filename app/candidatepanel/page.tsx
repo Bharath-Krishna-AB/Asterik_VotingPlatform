@@ -1,8 +1,8 @@
-import React from 'react'
 import Navbar from '../../components/Navbar'
 import Candidate from '../../components/Candidate'
 
-const CandidatePage = () => {
+const page= () => {
+
     return (
         <div className="bg-foreground w-screen">
             <Navbar />
@@ -14,4 +14,4 @@ const CandidatePage = () => {
     )
 }
 
-export default CandidatePage
+export default page

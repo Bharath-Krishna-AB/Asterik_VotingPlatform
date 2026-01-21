@@ -24,6 +24,13 @@ const page:React.FC = () => {
     }
 
     console.log(formData);
+
+    const handleSubmit = () => {
+        try {
+            
+        } catch (error) {
+        }
+    }
     
 
     return (
@@ -44,7 +51,7 @@ const page:React.FC = () => {
                 </div>
 
                 {/* Form */}
-                <form action="" className="flex flex-col gap-5">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                     <div className="space-y-3">
                         <div className="group relative">
                             <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400 group-focus-within:text-black transition-colors" />
