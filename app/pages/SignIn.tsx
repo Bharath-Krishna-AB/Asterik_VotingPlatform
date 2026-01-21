@@ -1,7 +1,29 @@
-import React from 'react'
-import { Asterisk, ArrowRight, Mail, Lock } from 'lucide-react'
+"use client"
 
-const SignIn = () => {
+import { Asterisk, ArrowRight, Mail, Lock } from 'lucide-react'
+import {ChangeEvent, useState} from 'react'
+
+interface SignInFormData {
+  email: string,
+  password: string,
+}
+
+const SignIn: React.FC = () => {
+
+  const [formData, setFormData] = useState<SignInFormData>({
+    email: "",
+    password: "",
+  })
+
+
+  const handleInputChange = (name:string,value:string) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+    console.log(formData);
+  };
+
   return (
     <div className="w-full min-h-screen flex justify-center items-center bg-[#FAFAFA] text-neutral-900 selection:bg-primary selection:text-black font-[panchang,sans-serif]">
       <main className="w-full max-w-[420px] bg-white border border-neutral-200 rounded-[32px] p-8 md:p-10 shadow-xl shadow-black/5 mx-4 flex flex-col gap-8">
@@ -27,6 +49,8 @@ const SignIn = () => {
               <input
                 type="email"
                 placeholder='Email Address'
+                value={formData.email}
+                onChange={(e: ChangeEvent<HTMLInputElement> ) => handleInputChange("email",e.target.value)}
                 className='w-full h-14 pl-12 pr-4 rounded-2xl border border-neutral-200 bg-neutral-50 outline-none focus:bg-white focus:border-black transition-all placeholder:text-neutral-400 font-medium'
               />
             </div>
@@ -35,6 +59,8 @@ const SignIn = () => {
               <input
                 type="password"
                 placeholder='Password'
+                value={formData.password}
+                onChange= {(e: ChangeEvent<HTMLInputElement>) => handleInputChange("password",e.target.value)}
                 className='w-full h-14 pl-12 pr-4 rounded-2xl border border-neutral-200 bg-neutral-50 outline-none focus:bg-white focus:border-black transition-all placeholder:text-neutral-400 font-medium'
               />
             </div>
