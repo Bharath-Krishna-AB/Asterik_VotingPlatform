@@ -1,4 +1,5 @@
 import { ArrowRight, Asterisk } from 'lucide-react'
+import Link from 'next/link'
 
 const page = () => {
     return (
@@ -21,12 +22,14 @@ const page = () => {
                         Every vote is a voice. This platform exists to make sure none of them are lost.
                     </p>
                 </div>
+                <Link href="/signup">
                 <div className="flex items-center gap-4 group cursor-pointer">
                     <p className='font-medium text-lg md:text-xl border-b-2 border-transparent group-hover:border-black transition-all'>Get Started!</p>
                     <button className='w-14 h-14 flex items-center justify-center bg-black rounded-full group-hover:scale-110 transition-transform'>
                         <ArrowRight size={28} className='text-primary duration-300 group-hover:-rotate-45 transition-transform' />
                     </button>
                 </div>
+                </Link>
             </div>
         </main>
     )
