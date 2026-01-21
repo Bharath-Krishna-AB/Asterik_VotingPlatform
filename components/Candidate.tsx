@@ -1,11 +1,12 @@
 import React from 'react'
-import { ArrowUpRight, User } from 'lucide-react'
+import { ArrowUpRight, User, Linkedin } from 'lucide-react'
 
 interface CandidatePanelData {
     candidateId?: number;
     name?: string;
     imageUrl?: string;
     description?: string;
+    LinkedInUrl?: string;
 }
 
 const Candidate: React.FC<CandidatePanelData> = ({
@@ -13,6 +14,7 @@ const Candidate: React.FC<CandidatePanelData> = ({
     name,
     imageUrl,
     description,
+    LinkedInUrl
 }) => {
 
     return (
@@ -36,7 +38,14 @@ const Candidate: React.FC<CandidatePanelData> = ({
             {/* Content */}
             <div className="px-2 space-y-4">
                 <div className="space-y-1">
-                    <h3 className="font-bold text-2xl leading-none tracking-tight">{name}</h3>
+                    <div className="flex items-center justify-between">
+                        <h3 className="font-bold text-2xl leading-none tracking-tight">{name}</h3>
+                        <a href={LinkedInUrl}>
+                        <div className="w-8 h-8 rounded-full bg-neutral-100 flex items-center justify-center hover:bg-[#0077b5] group/linkedin transition-colors cursor-pointer">
+                            <Linkedin className="w-4 h-4 text-neutral-600 group-hover/linkedin:text-white transition-colors" />
+                        </div>
+                        </a>
+                    </div>
                     <p className="text-sm font-medium text-neutral-500 uppercase tracking-wide">CANDIDATE</p>
                 </div>
 

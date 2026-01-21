@@ -6,6 +6,7 @@ interface candidatePanelData {
     name: string;
     imageUrl: string;
     description: string;
+    LinkedInUrl: string;
 }
 
 const page: React.FC = () => {
@@ -16,12 +17,14 @@ const page: React.FC = () => {
             name: "Bharath Krishna A B",
             imageUrl: "/images/candidate1.jpeg",
             description: "MERN Stack Developer | Freelance Web Developer | Ideathon & Hackathon Winner | CSE Student",
+            LinkedInUrl: "https://www.linkedin.com/in/bharathkrishnaab/"
         },
         {
             candidateId: 2,
-            name: "Navaneeth",
+            name: "Navaneeth R",
             imageUrl: "/images/candidate2.png",
             description: "MERN Stack Developer | Freelance Web Developer | Ideathon & Hackathon Winner | CSE Student",
+            LinkedInUrl: "https://www.linkedin.com/in/navaneeth-r-b55389387/"
         }
     ]
 
@@ -49,6 +52,7 @@ const page: React.FC = () => {
                             name={candidate.name}
                             imageUrl={candidate.imageUrl}
                             description={candidate.description}
+                            LinkedInUrl={candidate.LinkedInUrl}
                         />
                     ))}
                 </div>
