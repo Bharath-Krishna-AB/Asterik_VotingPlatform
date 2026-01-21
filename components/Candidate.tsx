@@ -1,19 +1,20 @@
 import React from 'react'
 import { ArrowUpRight, User } from 'lucide-react'
 
-interface CandidatePanelProps {
+interface CandidatePanelData {
+    candidateId?: number;
     name?: string;
-    role?: string;
     imageUrl?: string;
     description?: string;
 }
 
-const Candidate: React.FC<CandidatePanelProps> = ({
-    name = "Sarah J. Connor", // Default name
-    role = "Presidential Candidate",
+const Candidate: React.FC<CandidatePanelData> = ({
+    candidateId,
+    name,
     imageUrl,
-    description = "Advocating for a sustainable future through transparent governance and community-driven initiatives."
+    description,
 }) => {
+
     return (
         <div className="group relative w-full max-w-sm bg-white rounded-[32px] p-4 border border-neutral-200 hover:border-black transition-colors duration-300 shadow-xl shadow-black/5 font-[panchang,sans-serif] my-12">
             {/* Image Container */}
@@ -28,7 +29,7 @@ const Candidate: React.FC<CandidatePanelProps> = ({
 
                 {/* Badge */}
                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full border border-neutral-100">
-                    <span className="text-xs font-bold tracking-wider uppercase text-black">#{role.split(' ')[0]}</span>
+                    <span className="text-xs font-bold tracking-wider uppercase text-black">#CANDIDATE{candidateId}</span>
                 </div>
             </div>
 
@@ -36,7 +37,7 @@ const Candidate: React.FC<CandidatePanelProps> = ({
             <div className="px-2 space-y-4">
                 <div className="space-y-1">
                     <h3 className="font-bold text-2xl leading-none tracking-tight">{name}</h3>
-                    <p className="text-sm font-medium text-neutral-500 uppercase tracking-wide">{role}</p>
+                    <p className="text-sm font-medium text-neutral-500 uppercase tracking-wide">CANDIDATE</p>
                 </div>
 
                 <p className="text-sm text-neutral-600 line-clamp-2 leading-relaxed font-sans">
