@@ -14,13 +14,13 @@ const page: React.FC = () => {
         {
             candidateId: 1,
             name: "Bharath Krishna A B",
-            imageUrl: "/images/candidate1.jpg",
+            imageUrl: "/images/candidate1.jpeg",
             description: "MERN Stack Developer | Freelance Web Developer | Ideathon & Hackathon Winner | CSE Student",
         },
         {
             candidateId: 2,
             name: "Navaneeth",
-            imageUrl: "/images/candidate2.jpg",
+            imageUrl: "/images/candidate2.png",
             description: "MERN Stack Developer | Freelance Web Developer | Ideathon & Hackathon Winner | CSE Student",
         }
     ]
