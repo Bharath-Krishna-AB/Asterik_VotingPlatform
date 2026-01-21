@@ -14,6 +14,7 @@ interface CandidateDetailsProps {
     };
 }
 
+
 const CandidateDetails: React.FC<CandidateDetailsProps> = ({
     candidateId,
     name,
@@ -73,7 +74,7 @@ const CandidateDetails: React.FC<CandidateDetailsProps> = ({
                     <div className="flex-1 flex flex-col gap-10">
                         {/* Title Section */}
                         <div className="space-y-4">
-                            <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-neutral-200 bg-foreground shadow-sm select-none">
+                            <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-neutral-200 bg-black shadow-sm select-none">
                                 <span className="text-xs font-bold tracking-widest uppercase text-primary">#Candidate {candidateId}</span>
                             </div>
                             <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-neutral-900 leading-[0.9] uppercase">
