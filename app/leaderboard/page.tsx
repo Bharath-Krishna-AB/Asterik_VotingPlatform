@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -23,61 +24,84 @@ const LeaderboardPage = () => {
                     <div className="space-y-2">
                         <div className="inline-flex items-center gap-2 px-3 py-1 bg-black text-white rounded-full text-xs font-bold uppercase tracking-widest">
                             <Sparkles className="w-3 h-3 text-[#D5EF36]" />
-                            <span>Live Standings</span>
+                            <span>Election Analysis</span>
                         </div>
                         <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9] font-[panchang,sans-serif]">
-                            Voting<br />Leaderboard
+                            Overall<br />Standings
                         </h1>
                     </div>
 
                     <div className="text-right hidden md:block">
                         <p className="text-neutral-500 font-medium max-w-xs ml-auto">
-                            Real-time updates of the current voting status. Every vote counts towards the final decision.
+                            Comprehensive analysis of total valid votes. A detailed breakdown of the final election processing.
                         </p>
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 relative">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 relative items-start">
 
-                    {/* Left Column: Leaderboard (8 cols) */}
-                    <div className="lg:col-span-8 flex flex-col gap-4">
-                        {/* Top Banner / Hero Card could go here, but let's stick to the list for clarity */}
-                        <div className="flex items-center justify-between px-2 mb-2">
-                            <span className="text-xs font-bold uppercase tracking-widest text-neutral-400">Candidate Ranking</span>
-                            <span className="text-xs font-bold uppercase tracking-widest text-neutral-400">Total Votes</span>
+                    {/* Left Column: Leaderboard & Stats (8 cols) */}
+                    <div className="lg:col-span-8 flex flex-col gap-8">
+
+                        {/* Leaderboard Section */}
+                        <div className="flex flex-col gap-4">
+                            <div className="flex items-center justify-between px-2">
+                                <span className="text-xs font-bold uppercase tracking-widest text-neutral-400">Final Ranking</span>
+                                <span className="text-xs font-bold uppercase tracking-widest text-neutral-400">Total Valid Votes</span>
+                            </div>
+
+                            {LEADERBOARD_DATA.map((candidate) => (
+                                <LeaderboardCard
+                                    key={candidate.rank}
+                                    rank={candidate.rank}
+                                    name={candidate.name}
+                                    votes={candidate.votes}
+                                    percentage={candidate.percentage}
+                                    imageUrl={candidate.imageUrl}
+                                />
+                            ))}
                         </div>
 
-                        {LEADERBOARD_DATA.map((candidate) => (
-                            <LeaderboardCard
-                                key={candidate.rank}
-                                rank={candidate.rank}
-                                name={candidate.name}
-                                votes={candidate.votes}
-                                percentage={candidate.percentage}
-                                imageUrl={candidate.imageUrl}
-                            />
-                        ))}
-                    </div>
-
-                    {/* Right Column: Voters Feed (4 cols) */}
-                    <div className="lg:col-span-4 space-y-8">
-                        {/* Sticky container for the feed */}
-                        <div className="sticky top-24">
-                            <VotersList />
-
-                            {/* Additional Info Box */}
-                            <div className="mt-6 bg-[#D5EF36] rounded-[32px] p-8 flex flex-col justify-between min-h-[200px] relative overflow-hidden group cursor-pointer hover:scale-[1.02] transition-transform">
+                        {/* Bottom Row: Widgets */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-[280px]">
+                            {/* Champion Status Widget */}
+                            <div className="bg-[#D5EF36] rounded-[32px] p-8 flex flex-col justify-between relative overflow-hidden group cursor-pointer hover:scale-[1.02] transition-transform shadow-xl shadow-black/5 h-full">
                                 <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
                                     <Crown className="w-32 h-32 rotate-12" />
                                 </div>
                                 <div>
-                                    <h3 className="text-2xl font-black uppercase font-[panchang,sans-serif] mb-2 leading-none">Champion<br />Status</h3>
-                                    <p className="font-medium text-black/80 text-sm">Review the top candidate's full manifesto.</p>
+                                    <h3 className="text-3xl font-black uppercase font-[panchang,sans-serif] mb-2 leading-none">Victory<br />Margin</h3>
+                                    <p className="font-medium text-black/80 text-sm mt-4">Current Leader leads by <span className="font-bold">209 votes</span> in the final tally.</p>
                                 </div>
-                                <div className="flex items-center gap-2 mt-4 font-bold uppercase tracking-wide border-b-2 border-black/20 self-start pb-1">
-                                    View Details
+                                <div className="flex items-center gap-2 mt-4 font-bold uppercase tracking-wide border-b-2 border-black/20 self-start pb-1 text-xs">
+                                    View Source Data
                                 </div>
                             </div>
+
+                            {/* Branding / Logo Widget */}
+                            <div className="bg-white rounded-[32px] p-8 flex flex-col items-center justify-center text-center relative overflow-hidden h-full shadow-xl shadow-black/5 border border-neutral-100 group">
+                                <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-20" />
+
+                                <div className="relative z-10 flex flex-col items-center gap-6">
+                                    <div className="w-24 h-24 rounded-3xl bg-black flex items-center justify-center -rotate-6 group-hover:rotate-12 transition-transform duration-500 shadow-2xl shadow-neutral-200">
+                                        <Sparkles className="text-[#D5EF36] w-12 h-12" />
+                                    </div>
+
+                                    <div className="space-y-1">
+                                        <h3 className="text-3xl font-black tracking-tighter uppercase font-[panchang,sans-serif] text-neutral-900">Asterik</h3>
+                                        <p className="text-[10px] font-bold tracking-[0.2em] text-neutral-400 uppercase">Official Voting Partner</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    {/* Right Column: Voters List (4 cols) */}
+                    <div className="lg:col-span-4 h-full">
+                        {/* Sticky sidebar that takes available height */}
+                        <div className="sticky top-24 h-[56.5vh] min-h-[400px]">
+                            <VotersList />
                         </div>
                     </div>
 

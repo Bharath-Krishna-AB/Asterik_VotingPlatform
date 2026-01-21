@@ -24,14 +24,14 @@ const VotersList = () => {
     }, [filter]);
 
     return (
-        <div className="w-full bg-black rounded-[32px] p-6 lg:p-8 overflow-hidden relative shadow-2xl h-[600px] flex flex-col">
+        <div className="w-full bg-black rounded-[32px] p-6 lg:p-8 overflow-hidden relative shadow-2xl h-full flex flex-col">
             {/* Header */}
             <div className="flex items-center justify-between mb-6 pb-4 border-b border-neutral-800 shrink-0">
                 <div className="flex items-center gap-3">
                     <div className="relative">
-                        <div className="w-3 h-3 bg-[#D5EF36] rounded-full animate-pulse" />
+                        <div className="w-3 h-3 bg-[#D5EF36] rounded-full" />
                     </div>
-                    <h2 className="text-2xl font-black text-white uppercase tracking-tight font-[panchang,sans-serif]">Live Votes</h2>
+                    <h2 className="text-2xl font-black text-white uppercase tracking-tight font-[panchang,sans-serif]">Vote Log</h2>
                 </div>
                 <div className="flex gap-2">
                     {['All', 'Bharath', 'Navaneeth'].map((f) => (
@@ -39,8 +39,8 @@ const VotersList = () => {
                             key={f}
                             onClick={() => setFilter(f)}
                             className={`px-3 py-1 rounded-full text-xs font-bold transition-all ${filter === f
-                                    ? 'bg-[#D5EF36] text-black'
-                                    : 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700'
+                                ? 'bg-[#D5EF36] text-black'
+                                : 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700'
                                 }`}
                         >
                             {f}
