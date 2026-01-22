@@ -26,7 +26,7 @@ const CandidateDetails: React.FC<CandidateDetailsProps> = ({
     socials = {}
 }) => {
     return (
-        <div className="min-h-screen bg-surface font-[panchang,sans-serif] selection:bg-primary selection:text-black pb-20">
+        <div className="min-h-screen bg-surface font-sans selection:bg-primary selection:text-black pb-20">
             <main className="container mx-auto px-4 pt-8 md:pt-16">
 
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
@@ -80,7 +80,7 @@ const CandidateDetails: React.FC<CandidateDetailsProps> = ({
                             <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-neutral-200 bg-black shadow-sm select-none">
                                 <span className="text-xs font-bold tracking-widest uppercase text-primary">#Candidate {candidateId}</span>
                             </div>
-                            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-neutral-900 leading-[0.9] uppercase">
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase text-neutral-900 leading-[1.1] mb-2 font-clash-display">
                                 {name}
                             </h1>
                             <p className="text-xl font-medium text-neutral-500 max-w-2xl leading-relaxed">

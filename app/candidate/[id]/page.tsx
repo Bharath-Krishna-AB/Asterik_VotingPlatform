@@ -48,7 +48,7 @@ const CandidatePage = () => {
 
     if (!candidate) {
         return (
-            <div className="min-h-screen bg-surface flex items-center justify-center font-[panchang,sans-serif]">
+            <div className="min-h-screen bg-surface flex items-center justify-center font-sans">
                 <div className="text-center space-y-4">
                     <h1 className="text-4xl font-bold">Candidate Not Found</h1>
                     <p className="text-neutral-500">The candidate you are looking for does not exist.</p>

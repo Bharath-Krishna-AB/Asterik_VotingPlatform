@@ -31,7 +31,7 @@ const VotersList = () => {
                     <div className="relative">
                         <div className="w-3 h-3 bg-primary rounded-full" />
                     </div>
-                    <h2 className="text-2xl font-black text-white uppercase tracking-tight font-[panchang,sans-serif]">Vote Log</h2>
+                    <h2 className="text-2xl font-black text-white uppercase tracking-tight font-clash-display">Vote Log</h2>
                 </div>
                 <div className="flex gap-2">
                     {['All', 'Bharath', 'Navaneeth'].map((f) => (

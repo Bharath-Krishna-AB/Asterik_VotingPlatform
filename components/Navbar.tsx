@@ -11,7 +11,7 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="w-full h-24 bg-white/80 backdrop-blur-md border-b border-neutral-100 flex items-center justify-between px-6 md:px-12 sticky top-0 z-50 font-[panchang,sans-serif]">
+        <nav className="w-full h-24 bg-white/80 backdrop-blur-md border-b border-neutral-100 flex items-center justify-between px-6 md:px-12 sticky top-0 z-50 font-sans">
             {/* Logo Section */}
             <div className="flex items-center gap-3 group cursor-pointer">
                 <div className="w-10 h-10 rounded-xl bg-black flex items-center justify-center -rotate-6 group-hover:rotate-12 transition-transform duration-500 shadow-2xl shadow-neutral-200">

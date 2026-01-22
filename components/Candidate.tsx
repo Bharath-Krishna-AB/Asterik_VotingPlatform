@@ -19,7 +19,7 @@ const Candidate: React.FC<CandidatePanelData> = ({
 }) => {
 
     return (
-        <div className="group relative w-full max-w-sm bg-white rounded-[32px] p-4 border border-neutral-200 hover:border-black transition-colors duration-300 shadow-xl shadow-black/5 font-[panchang,sans-serif] my-12">
+        <div className="group relative w-full max-w-sm bg-white rounded-[32px] p-4 border border-neutral-200 hover:border-black transition-colors duration-300 shadow-xl shadow-black/5 font-sans my-12">
             {/* Image Container */}
             <div className="relative w-full aspect-[4/5] rounded-[24px] overflow-hidden bg-neutral-100 mb-6">
                 {imageUrl ? (
@@ -40,7 +40,7 @@ const Candidate: React.FC<CandidatePanelData> = ({
             <div className="px-2 space-y-4">
                 <div className="space-y-1">
                     <div className="flex items-center justify-between">
-                        <h3 className="font-bold text-2xl leading-none tracking-tight">{name}</h3>
+                        <h3 className="text-xl font-bold uppercase tracking-tight mb-1 group-hover:text-primary transition-colors font-clash-display">{name}</h3>
                         <a href={LinkedInUrl}>
                             <div className="w-8 h-8 rounded-full bg-neutral-100 flex items-center justify-center hover:bg-[#0077b5] group/linkedin transition-colors cursor-pointer">
                                 <Linkedin className="w-4 h-4 text-neutral-600 group-hover/linkedin:text-white transition-colors" />

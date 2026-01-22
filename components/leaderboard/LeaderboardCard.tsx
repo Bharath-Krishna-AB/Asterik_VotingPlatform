@@ -1,7 +1,7 @@
 import React from 'react';
 import { Trophy } from 'lucide-react';
 
-interface LeaderboardCardProps {
+interface LeaderboardCardData {
     rank: number;
     name: string;
     votes: number;
@@ -9,12 +9,12 @@ interface LeaderboardCardProps {
     imageUrl?: string;
 }
 
-const LeaderboardCard: React.FC<LeaderboardCardProps> = ({ rank, name, votes, percentage, imageUrl }) => {
+const LeaderboardCard: React.FC<LeaderboardCardData> = ({ rank, name, votes, percentage, imageUrl }) => {
     return (
         <div className="group relative w-full bg-white border border-neutral-200 rounded-[20px] p-4 flex items-center gap-4 shadow-sm hover:shadow-md transition-all">
             {/* Rank Indicator */}
             <div className={`
-                flex items-center justify-center w-12 h-12 rounded-xl font-black text-xl font-[panchang,sans-serif]
+                flex items-center justify-center w-12 h-12 rounded-xl font-black text-xl font-clash-display
                 ${rank === 1 ? 'bg-primary text-black border border-black' :
                     rank === 2 ? 'bg-neutral-200 text-neutral-600' :
                         rank === 3 ? 'bg-orange-100 text-orange-600' : 'bg-neutral-100 text-neutral-400'}
@@ -35,7 +35,7 @@ const LeaderboardCard: React.FC<LeaderboardCardProps> = ({ rank, name, votes, pe
 
             {/* Info */}
             <div className="flex-1 min-w-0">
-                <h3 className="font-bold text-neutral-900 truncate font-[panchang,sans-serif]">{name}</h3>
+                <h3 className="font-bold text-neutral-900 truncate font-clash-display">{name}</h3>
                 <div className="flex items-center gap-2 text-sm text-neutral-500">
                     <span className="font-medium bg-neutral-100 px-1.5 rounded text-neutral-600">
                         {votes.toLocaleString()} votes

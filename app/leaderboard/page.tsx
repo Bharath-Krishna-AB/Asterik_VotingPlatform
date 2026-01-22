@@ -26,8 +26,8 @@ const LeaderboardPage = () => {
                             <Sparkles className="w-3 h-3 text-primary" />
                             <span>Election Analysis</span>
                         </div>
-                        <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9] font-[panchang,sans-serif]">
-                            Overall<br />Standings
+                        <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9] font-clash-display">
+                            Overall Standings
                         </h1>
                     </div>
 
@@ -70,7 +70,7 @@ const LeaderboardPage = () => {
                                     <Crown className="w-32 h-32 rotate-12" />
                                 </div>
                                 <div>
-                                    <h3 className="text-3xl font-black uppercase font-[panchang,sans-serif] mb-2 leading-none">Victory<br />Margin</h3>
+                                    <h3 className="text-3xl font-black uppercase font-clash-display mb-2 leading-none">Victory Margin</h3>
                                     <p className="font-medium text-black/80 text-sm mt-4">Current Leader leads by <span className="font-bold">209 votes</span> in the final tally.</p>
                                 </div>
                                 <div className="flex items-center gap-2 mt-4 font-bold uppercase tracking-wide border-b-2 border-black/20 self-start pb-1 text-xs">
@@ -88,7 +88,7 @@ const LeaderboardPage = () => {
                                     </div>
 
                                     <div className="space-y-1">
-                                        <h3 className="text-3xl font-black tracking-tighter uppercase font-[panchang,sans-serif] text-neutral-900">Asterik</h3>
+                                        <h3 className="text-3xl font-black tracking-tighter uppercase font-clash-display text-neutral-900">Asterik</h3>
                                         <p className="text-[10px] font-bold tracking-[0.2em] text-neutral-400 uppercase">Official Voting Partner</p>
                                     </div>
                                 </div>

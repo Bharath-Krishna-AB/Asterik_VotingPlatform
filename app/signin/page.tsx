@@ -36,7 +36,7 @@ const page: React.FC = () => {
 
 
   return (
-    <div className="w-full min-h-screen flex justify-center items-center bg-surface text-neutral-900 selection:bg-primary selection:text-black font-[panchang,sans-serif]">
+    <div className="w-full min-h-screen flex justify-center items-center bg-surface text-neutral-900 selection:bg-primary selection:text-black font-sans">
       <main className="w-full max-w-[420px] bg-white border border-neutral-200 rounded-[32px] p-8 md:p-10 shadow-xl shadow-black/5 mx-4 flex flex-col gap-8">
 
         {/* Header */}
@@ -45,7 +45,7 @@ const page: React.FC = () => {
             <Sparkles className="text-primary w-7 h-7" />
           </div>
           <div className="space-y-2">
-            <h2 className='font-[Panchang] font-bold text-2xl tracking-tight'>Welcome Back</h2>
+            <h2 className='font-clash-display font-bold text-2xl tracking-tight'>Welcome Back</h2>
             <p className='text-neutral-500 text-sm leading-relaxed max-w-[280px] mx-auto'>
               Enter your credentials to access the voting platform dashboard.
             </p>
@@ -85,7 +85,7 @@ const page: React.FC = () => {
             <a href="#" className="text-xs font-semibold text-neutral-500 hover:text-black transition-colors">Forgot Password?</a>
           </div>
           <Link href="/candidatepanel">
-            <button type="submit" className='w-full h-14 bg-primary rounded-2xl flex items-center justify-center gap-2 font-[panchang,sans-serif] font-bold text-sm tracking-wide text-black hover:brightness-95 active:scale-[0.98] transition-all group shadow-sm'>
+            <button type="submit" className='w-full h-14 bg-primary rounded-2xl flex items-center justify-center gap-2 font-clash-display font-bold text-sm tracking-wide text-black hover:brightness-95 active:scale-[0.98] transition-all group shadow-sm'>
               <span>SIGN IN</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
