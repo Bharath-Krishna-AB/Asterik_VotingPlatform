@@ -1,18 +1,18 @@
 import React, { useMemo, useState } from 'react';
-import { User } from 'lucide-react';
+import { User, Linkedin } from 'lucide-react';
 
 // Mock data generator for voters
 const RECENT_VOTERS = [
-    { name: "Alex Johnson", time: "2m ago", candidate: "Bharath Krishna" },
-    { name: "Maria Garcia", time: "5m ago", candidate: "Navaneeth R" },
-    { name: "David Kim", time: "12m ago", candidate: "Bharath Krishna" },
-    { name: "Sophie Turner", time: "15m ago", candidate: "Navaneeth R" },
-    { name: "Lucas Silva", time: "18m ago", candidate: "Bharath Krishna" },
-    { name: "Emily Blunt", time: "22m ago", candidate: "Navaneeth R" },
-    { name: "Ryan Reynolds", time: "25m ago", candidate: "Bharath Krishna" },
-    { name: "Jessica Alba", time: "30m ago", candidate: "Bharath Krishna" },
-    { name: "John Doe", time: "32m ago", candidate: "Navaneeth R" },
-    { name: "Jane Doe", time: "35m ago", candidate: "Bharath Krishna" },
+    { name: "Alex Johnson", time: "2m ago", candidate: "Bharath Krishna", linkedinUrl: "#" },
+    { name: "Maria Garcia", time: "5m ago", candidate: "Navaneeth R", linkedinUrl: "#" },
+    { name: "David Kim", time: "12m ago", candidate: "Bharath Krishna", linkedinUrl: "#" },
+    { name: "Sophie Turner", time: "15m ago", candidate: "Navaneeth R", linkedinUrl: "#" },
+    { name: "Lucas Silva", time: "18m ago", candidate: "Bharath Krishna", linkedinUrl: "#" },
+    { name: "Emily Blunt", time: "22m ago", candidate: "Navaneeth R", linkedinUrl: "#" },
+    { name: "Ryan Reynolds", time: "25m ago", candidate: "Bharath Krishna", linkedinUrl: "#" },
+    { name: "Jessica Alba", time: "30m ago", candidate: "Bharath Krishna", linkedinUrl: "#" },
+    { name: "John Doe", time: "32m ago", candidate: "Navaneeth R", linkedinUrl: "#" },
+    { name: "Jane Doe", time: "35m ago", candidate: "Bharath Krishna", linkedinUrl: "#" },
 ];
 
 const VotersList = () => {
@@ -63,7 +63,17 @@ const VotersList = () => {
                                     <div className="text-xs text-neutral-500">voted for <span className="text-neutral-300">{voter.candidate}</span></div>
                                 </div>
                             </div>
-                            <span className="text-xs font-mono text-primary opacity-60 group-hover:opacity-100">{voter.time}</span>
+                            <div className="flex items-center gap-3">
+                                <span className="text-xs font-mono text-primary opacity-60 group-hover:opacity-100">{voter.time}</span>
+                                <a
+                                    href={voter.linkedinUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-8 h-8 rounded-full bg-neutral-800 flex items-center justify-center hover:bg-[#0077b5] group/linkedin transition-all opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0"
+                                >
+                                    <Linkedin className="w-3.5 h-3.5 text-neutral-400 group-hover/linkedin:text-white transition-colors" />
+                                </a>
+                            </div>
                         </div>
                     ))}
 

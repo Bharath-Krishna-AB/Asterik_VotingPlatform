@@ -11,14 +11,9 @@ interface LeaderboardCardData {
 
 const LeaderboardCard: React.FC<LeaderboardCardData> = ({ rank, name, votes, percentage, imageUrl }) => {
     return (
-        <div className="group relative w-full bg-white border border-neutral-200 rounded-[20px] p-4 flex items-center gap-4 shadow-sm hover:shadow-md transition-all">
+        <div className="group relative w-full bg-white border border-neutral-200 rounded-[20px] p-4 flex items-center gap-4 shadow-sm hover:shadow-md transition-all hover:scale-[1.02] cursor-pointer duration-500">
             {/* Rank Indicator */}
-            <div className={`
-                flex items-center justify-center w-12 h-12 rounded-xl font-black text-xl font-clash-display
-                ${rank === 1 ? 'bg-primary text-black border border-black' :
-                    rank === 2 ? 'bg-neutral-200 text-neutral-600' :
-                        rank === 3 ? 'bg-orange-100 text-orange-600' : 'bg-neutral-100 text-neutral-400'}
-            `}>
+            <div className='mx-5 font-black text-4xl font-clash-display text-black '>
                 {rank}
             </div>
 
@@ -38,7 +33,7 @@ const LeaderboardCard: React.FC<LeaderboardCardData> = ({ rank, name, votes, per
                 <h3 className="font-bold text-neutral-900 truncate font-clash-display">{name}</h3>
                 <div className="flex items-center gap-2 text-sm text-neutral-500">
                     <span className="font-medium bg-neutral-100 px-1.5 rounded text-neutral-600">
-                        {votes.toLocaleString()} votes
+                        {votes} votes
                     </span>
                     <span className="text-xs">• {percentage}% share</span>
                 </div>
@@ -55,7 +50,7 @@ const LeaderboardCard: React.FC<LeaderboardCardData> = ({ rank, name, votes, per
             </div>
 
             {/* Hover Effect Border */}
-            <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary/50 rounded-[20px] transition-colors pointer-events-none" />
+            <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary/80 rounded-[20px] transition-colors pointer-events-none" />
         </div>
     );
 };
