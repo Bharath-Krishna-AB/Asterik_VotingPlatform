@@ -1,6 +1,10 @@
+'use client'
+
 import React from 'react'
 import { ArrowUpRight, Github, Linkedin, CheckCircle2, BookOpen, User } from 'lucide-react'
 import Link from 'next/link';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap'
 
 interface CandidateDetailsProps {
     candidateId?: number;
@@ -25,6 +29,29 @@ const CandidateDetails: React.FC<CandidateDetailsProps> = ({
     education,
     socials = {}
 }) => {
+
+    useGSAP(() => {
+        const tl = gsap.timeline({
+            delay: .7
+        })
+
+        tl.from(".candidate-img", {
+            opacity: 0,
+            x: -100,
+            ease: "elastic.out(2,0.5)",
+            duration: 1
+        }).from(".candidate-vote-button", {
+            opacity: 0,
+            x: -100,
+            ease: "elastic.out(2,0.5)",
+            duration: 1
+        }, "-=1")
+
+
+
+    })
+
+
     return (
         <div className="min-h-screen bg-surface font-sans selection:bg-primary selection:text-black pb-20">
             <main className="container mx-auto px-4 pt-8 md:pt-16">
@@ -34,7 +61,7 @@ const CandidateDetails: React.FC<CandidateDetailsProps> = ({
                     {/* Left Column - Profile & Actions */}
                     <div className="w-full lg:w-[400px] flex flex-col gap-8">
                         {/* Image Card */}
-                        <div className="relative aspect-[4/5] w-full rounded-[32px] overflow-hidden bg-white border border-neutral-200 shadow-xl shadow-black/5 group select-none cursor-pointer">
+                        <div className="candidate-img relative aspect-[4/5] w-full rounded-[32px] overflow-hidden bg-white border border-neutral-200 shadow-xl shadow-black/5 group select-none cursor-pointer">
                             {imageUrl ? (
                                 <img src={imageUrl} alt={name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                             ) : (
@@ -60,7 +87,7 @@ const CandidateDetails: React.FC<CandidateDetailsProps> = ({
                         </div>
 
                         {/* Vote Button */}
-                        <Link href="/leaderboard">
+                        <Link href="/leaderboard" className='candidate-vote-button'>
                             <button className="w-full h-20 bg-primary rounded-[24px] flex items-center justify-between px-8 group hover:brightness-95 active:scale-[0.98] transition-all shadow-lg shadow-black/5 cursor-pointer">
                                 <div className="flex flex-col items-start">
                                     <span className="text-xs font-bold uppercase tracking-widest text-neutral-800">Make your choice</span>
