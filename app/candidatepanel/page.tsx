@@ -1,6 +1,9 @@
+"use client"
+
 import Navbar from '../../components/Navbar'
 import Candidate from '../../components/Candidate'
-
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap'
 interface candidatePanelData {
     candidateId: number;
     name: string;
@@ -10,6 +13,16 @@ interface candidatePanelData {
 }
 
 const page: React.FC = () => {
+
+    useGSAP(() => {
+        const tl = gsap.timeline()
+
+        tl.from(".canidatepanel-gsap", {
+            opacity: 0,
+            y: 50,
+            ease: "power2.inOut",
+        })
+    })
 
     const candidateData: candidatePanelData[] = [
         {
@@ -35,16 +48,16 @@ const page: React.FC = () => {
             <main className="container mx-auto px-4 py-8 md:py-16">
                 {/* Page Header */}
                 <div className="flex flex-col items-center text-center space-y-4 mb-16">
-                    <h1 className="text-4xl md:text-6xl font-bold  tracking-tighter text-neutral-900 uppercase">
+                    <h1 className="canidatepanel-gsap text-4xl md:text-6xl font-bold  tracking-tighter text-neutral-900 uppercase">
                         Meet the Candidates <span className="text-primary">.</span>
                     </h1>
-                    <p className="max-w-xl text-neutral-500 font-medium leading-relaxed">
+                    <p className="canidatepanel-gsap max-w-xl text-neutral-500 font-medium leading-relaxed">
                         Discover the visionaries shaping our future. Review their profiles, manifestos, and track records before casting your vote.
                     </p>
                 </div>
 
                 {/* Candidates Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center">
+                <div className="canidatepanel-gsap grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center">
                     {candidateData.map((candidate) => (
                         <Candidate
                             key={candidate.candidateId}
