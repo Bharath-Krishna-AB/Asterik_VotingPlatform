@@ -1,11 +1,12 @@
 
 "use client";
 
-import React from 'react';
 import Navbar from '@/components/Navbar';
 import LeaderboardCard from '@/components/leaderboard/LeaderboardCard';
 import VotersList from '@/components/leaderboard/VotersList';
 import { Crown, Sparkles } from 'lucide-react';
+import BackButton from '@/components/ui/BackButton';
+import Link from 'next/link';
 
 const LeaderboardPage = () => {
     // Mock Data
@@ -18,7 +19,12 @@ const LeaderboardPage = () => {
         <div className="min-h-screen bg-surface text-neutral-900 font-sans selection:bg-primary selection:text-black">
             <Navbar />
 
-            <main className="container mx-auto px-4 pt-24 pb-20">
+            <main className="container mx-auto px-4 pt-2 pb-20">
+                <div className="mb-8">
+                    <Link href="/candidatepanel">
+                        <BackButton />
+                    </Link>
+                </div>
                 {/* Header Section */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
                     <div className="space-y-2">

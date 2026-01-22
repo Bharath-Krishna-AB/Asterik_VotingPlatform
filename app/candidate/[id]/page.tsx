@@ -3,6 +3,8 @@ import React from 'react';
 import CandidateDetails from '../../../components/CandidateDetails';
 import { useParams } from 'next/navigation';
 import Navbar from '@/components/Navbar';
+import BackButton from '@/components/ui/BackButton';
+import Link from 'next/link';
 
 const CandidatePage = () => {
     const params = useParams();
@@ -61,6 +63,9 @@ const CandidatePage = () => {
     return (
         <div className="bg-surface">
             <Navbar />
+            <div className="container mx-auto px-4 pt-8 mb-10">
+                <Link href="/candidatepanel"><BackButton /></Link>
+            </div>
             <CandidateDetails
                 candidateId={candidate.id}
                 name={candidate.name}
