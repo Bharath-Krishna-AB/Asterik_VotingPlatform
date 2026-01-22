@@ -75,52 +75,68 @@ const CandidateDetails: React.FC<CandidateDetailsProps> = ({
 
                     {/* Right Column - Details */}
                     <div className="flex-1 flex flex-col gap-10">
-                        {/* Title Section */}
-                        <div className="space-y-4">
-                            <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-neutral-200 bg-black shadow-sm select-none">
-                                <span className="text-xs font-bold tracking-widest uppercase text-primary">#Candidate {candidateId}</span>
+                        {/* Title Section - Massive Typography */}
+                        <div className="space-y-6">
+                            <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-neutral-200 bg-white/50 backdrop-blur-sm shadow-sm select-none">
+                                <span className="text-xs font-bold tracking-[0.2em] uppercase text-neutral-500">CANDIDATE : 00{candidateId}</span>
                             </div>
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase text-neutral-900 leading-[1.1] mb-2 font-clash-display">
+
+                            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black uppercase text-neutral-900 leading-[0.85] tracking-tighter font-clash-display break-words">
                                 {name}
                             </h1>
-                            <p className="text-xl font-medium text-neutral-500 max-w-2xl leading-relaxed">
-                                {description}
-                            </p>
+
+                            <div className="relative pl-6 border-l-4 border-primary/50 py-2">
+                                <p className="text-xl md:text-2xl font-medium text-neutral-800 leading-relaxed font-clash-display italic">
+                                    "{description}"
+                                </p>
+                            </div>
                         </div>
 
                         <div className="h-px w-full bg-neutral-200"></div>
 
-                        {/* Manifesto Section */}
-                        <div className="space-y-6">
-                            <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-xl bg-black flex items-center justify-center">
-                                    <CheckCircle2 className="w-5 h-5 text-primary" />
-                                </div>
-                                <h3 className="text-2xl font-bold uppercase tracking-tight">Key Manifesto</h3>
+                        {/* Manifesto Grid */}
+                        <div className="space-y-8">
+                            <div className="flex items-center gap-4">
+                                <div className="h-px flex-1 bg-neutral-200"></div>
+                                <span className="font-mono text-xs text-neutral-400 uppercase tracking-widest">Manifesto</span>
+                                <div className="h-px flex-1 bg-neutral-200"></div>
                             </div>
-                            <div className="grid gap-4">
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 {manifesto ? manifesto.map((item, index) => (
-                                    <div key={index} className="group flex items-start gap-4 p-6 bg-white border border-neutral-200 rounded-[24px] hover:border-black transition-colors shadow-sm">
-                                        <span className="text-4xl font-black text-neutral-100 group-hover:text-primary transition-colors">0{index + 1}</span>
-                                        <p className="text-lg font-medium text-neutral-800 pt-2">{item}</p>
+                                    <div key={index} className="group relative bg-neutral-50 rounded-[24px] p-6 hover:bg-black hover:text-white transition-all duration-300 border border-transparent hover:border-black cursor-default">
+                                        <div className="absolute top-6 right-6 font-clash-display text-4xl font-black text-neutral-200 group-hover:text-primary transition-colors">
+                                            {(index + 1).toString().padStart(2, '0')}
+                                        </div>
+                                        <div className="h-full flex flex-col justify-end relative z-10 pt-12">
+                                            <p className="text-lg font-bold leading-tight group-hover:translate-x-1 transition-transform">{item}</p>
+                                        </div>
                                     </div>
                                 )) : ""}
                             </div>
                         </div>
 
-                        {/* Education / Info */}
-                        <div className="space-y-6">
-                            <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-xl bg-black flex items-center justify-center">
-                                    <BookOpen className="w-5 h-5 text-primary" />
+                        {/* Data Block - Education */}
+                        <div className="rounded-[32px] bg-white border-2 border-dashed border-neutral-200 p-8 relative overflow-hidden">
+                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-neutral-200 to-primary"></div>
+
+                            <div className="flex flex-col gap-6 relative z-10">
+                                <div className="flex items-center justify-between">
+                                    <div className="flex items-center gap-3 text-neutral-400">
+                                        <BookOpen className="w-5 h-5" />
+                                        <span className="font-mono text-xs uppercase tracking-widest">Background Check</span>
+                                    </div>
+                                    <div className="px-2 py-0.5 rounded bg-primary/20 text-primary-dark font-mono text-[10px] font-bold uppercase">Verified</div>
                                 </div>
-                                <h3 className="text-2xl font-bold uppercase tracking-tight">Background</h3>
-                            </div>
-                            <div className="p-8 bg-black text-white rounded-[32px]">
-                                <span className="block text-xs font-bold text-neutral-400 tracking-widest uppercase mb-2">Education & Experience</span>
-                                <p className="text-xl md:text-2xl font-medium leading-relaxed">
-                                    {education}
-                                </p>
+
+                                <div className="space-y-4 font-mono">
+                                    <div>
+                                        <span className="text-xs text-neutral-400 uppercase block mb-1">Education & Experience</span>
+                                        <p className="text-xl font-bold text-black font-clash-display uppercase leading-tight">
+                                            {education}
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
