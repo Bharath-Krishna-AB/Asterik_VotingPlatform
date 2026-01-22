@@ -31,10 +31,13 @@ const CandidateDetails: React.FC<CandidateDetailsProps> = ({
 }) => {
 
     useGSAP(() => {
+
+        // timeline 
         const tl = gsap.timeline({
             delay: .7
         })
 
+        // img animation and vote button animation
         tl.from(".candidate-img", {
             opacity: 0,
             x: -100,
@@ -48,6 +51,12 @@ const CandidateDetails: React.FC<CandidateDetailsProps> = ({
         }, "-=1")
 
 
+        // right section container animation
+        tl.from(".candidate-right-section", {
+            opacity: 0,
+            y: 20,
+            ease: "power2.inOut",
+        }, "-=.8")
 
     })
 
@@ -101,14 +110,14 @@ const CandidateDetails: React.FC<CandidateDetailsProps> = ({
                     </div>
 
                     {/* Right Column - Details */}
-                    <div className="flex-1 flex flex-col gap-10">
+                    <div className="candidate-right-section flex-1 flex flex-col gap-10">
                         {/* Title Section - Massive Typography */}
                         <div className="space-y-6">
                             <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-neutral-200 bg-white/50 backdrop-blur-sm shadow-sm select-none">
                                 <span className="text-xs font-bold tracking-[0.2em] uppercase text-neutral-500">CANDIDATE : 00{candidateId}</span>
                             </div>
 
-                            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black uppercase text-neutral-900 leading-[0.85] tracking-tighter font-clash-display break-words">
+                            <h1 className=" text-6xl md:text-7xl lg:text-8xl font-black uppercase text-neutral-900 leading-[0.85] tracking-tighter font-clash-display break-words">
                                 {name}
                             </h1>
 
