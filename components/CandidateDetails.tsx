@@ -1,5 +1,6 @@
 import React from 'react'
 import { ArrowUpRight, Github, Linkedin, CheckCircle2, BookOpen, User } from 'lucide-react'
+import Link from 'next/link';
 
 interface CandidateDetailsProps {
     candidateId?: number;
@@ -25,7 +26,7 @@ const CandidateDetails: React.FC<CandidateDetailsProps> = ({
     socials = {}
 }) => {
     return (
-        <div className="min-h-screen bg-[#FAFAFA] font-[panchang,sans-serif] selection:bg-primary selection:text-black pb-20">
+        <div className="min-h-screen bg-surface font-[panchang,sans-serif] selection:bg-primary selection:text-black pb-20">
             <main className="container mx-auto px-4 pt-8 md:pt-16">
 
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
@@ -59,15 +60,17 @@ const CandidateDetails: React.FC<CandidateDetailsProps> = ({
                         </div>
 
                         {/* Vote Button */}
-                        <button className="w-full h-20 bg-primary rounded-[24px] flex items-center justify-between px-8 group hover:brightness-95 active:scale-[0.98] transition-all shadow-lg shadow-black/5 cursor-pointer">
-                            <div className="flex flex-col items-start">
-                                <span className="text-xs font-bold uppercase tracking-widest text-neutral-800">Make your choice</span>
-                                <span className="text-2xl font-black text-black tracking-tight">VOTE NOW</span>
-                            </div>
-                            <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-300">
-                                <ArrowUpRight className="w-6 h-6 text-white" />
-                            </div>
-                        </button>
+                        <Link href="/leaderboard">
+                            <button className="w-full h-20 bg-primary rounded-[24px] flex items-center justify-between px-8 group hover:brightness-95 active:scale-[0.98] transition-all shadow-lg shadow-black/5 cursor-pointer">
+                                <div className="flex flex-col items-start">
+                                    <span className="text-xs font-bold uppercase tracking-widest text-neutral-800">Make your choice</span>
+                                    <span className="text-2xl font-black text-black tracking-tight">VOTE NOW</span>
+                                </div>
+                                <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-300">
+                                    <ArrowUpRight className="w-6 h-6 text-white" />
+                                </div>
+                            </button>
+                        </Link>
                     </div>
 
                     {/* Right Column - Details */}

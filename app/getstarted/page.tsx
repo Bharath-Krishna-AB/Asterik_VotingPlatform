@@ -1,4 +1,4 @@
-import { ArrowRight , Sparkles } from 'lucide-react'
+import { ArrowRight, Sparkles } from 'lucide-react'
 import Link from 'next/link'
 
 const page = () => {
@@ -13,7 +13,7 @@ const page = () => {
                         <span className='flex flex-wrap items-center justify-center md:justify-start gap-3 md:gap-8'>
                             Where Every Vote
                             <div className="w-16 h-16 rounded-xl bg-black flex items-center justify-center -rotate-6 hover:rotate-12 transition-transform duration-500 shadow-2xl shadow-neutral-200 cursor-pointer">
-                                <Sparkles className="text-[#D5EF36] w-8 h-8" />
+                                <Sparkles className="text-primary w-8 h-8" />
                             </div>
                         </span>
                         Actually Counts.
@@ -22,13 +22,13 @@ const page = () => {
                         Every vote is a voice. This platform exists to make sure none of them are lost.
                     </p>
                 </div>
-                <Link href="/signup">
-                <div className="flex items-center gap-4 group cursor-pointer">
-                    <p className='font-medium text-lg md:text-xl border-b-2 border-transparent group-hover:border-black transition-all'>Get Started!</p>
-                    <button className='w-14 h-14 flex items-center justify-center bg-black rounded-full group-hover:scale-110 transition-transform'>
-                        <ArrowRight size={28} className='text-primary duration-300 group-hover:-rotate-45 transition-transform' />
-                    </button>
-                </div>
+                <Link href="/signin">
+                    <div className="flex items-center gap-4 group cursor-pointer">
+                        <p className='font-medium text-lg md:text-xl border-b-2 border-transparent group-hover:border-black transition-all'>Get Started!</p>
+                        <button className='w-14 h-14 flex items-center justify-center bg-black rounded-full group-hover:scale-110 transition-transform'>
+                            <ArrowRight size={28} className='text-primary duration-300 group-hover:-rotate-45 transition-transform' />
+                        </button>
+                    </div>
                 </Link>
             </div>
         </main>

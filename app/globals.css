@@ -9,6 +9,7 @@
   --font-gambarino: var(--font-gambarino);
   --font-panchang: Panchang, sans-serif;
   --color-primary: #D5EF36;
+  --color-surface: #FAFAFA;
 }
 
 :root {
@@ -25,6 +26,6 @@
 
 
 body{
-  background-color: #D5EF36;
+  background-color: var(--color-primary);
 }
 

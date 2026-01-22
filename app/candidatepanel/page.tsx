@@ -29,7 +29,7 @@ const page: React.FC = () => {
     ]
 
     return (
-        <div className="min-h-screen w-full bg-[#FAFAFA] font-[panchang,sans-serif] selection:bg-primary selection:text-black">
+        <div className="min-h-screen w-full bg-surface font-[panchang,sans-serif] selection:bg-primary selection:text-black">
             <Navbar />
 
             <main className="container mx-auto px-4 py-8 md:py-16">

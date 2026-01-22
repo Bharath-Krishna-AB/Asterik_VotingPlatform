@@ -15,7 +15,7 @@ const LeaderboardCard: React.FC<LeaderboardCardProps> = ({ rank, name, votes, pe
             {/* Rank Indicator */}
             <div className={`
                 flex items-center justify-center w-12 h-12 rounded-xl font-black text-xl font-[panchang,sans-serif]
-                ${rank === 1 ? 'bg-[#D5EF36] text-black border border-black' :
+                ${rank === 1 ? 'bg-primary text-black border border-black' :
                     rank === 2 ? 'bg-neutral-200 text-neutral-600' :
                         rank === 3 ? 'bg-orange-100 text-orange-600' : 'bg-neutral-100 text-neutral-400'}
             `}>
@@ -55,7 +55,7 @@ const LeaderboardCard: React.FC<LeaderboardCardProps> = ({ rank, name, votes, pe
             </div>
 
             {/* Hover Effect Border */}
-            <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#D5EF36]/50 rounded-[20px] transition-colors pointer-events-none" />
+            <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary/50 rounded-[20px] transition-colors pointer-events-none" />
         </div>
     );
 };

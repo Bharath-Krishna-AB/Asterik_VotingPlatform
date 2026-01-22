@@ -15,7 +15,7 @@ const LeaderboardPage = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-[#FAFAFA] text-neutral-900 font-sans selection:bg-[#D5EF36] selection:text-black">
+        <div className="min-h-screen bg-surface text-neutral-900 font-sans selection:bg-primary selection:text-black">
             <Navbar />
 
             <main className="container mx-auto px-4 pt-24 pb-20">
@@ -23,7 +23,7 @@ const LeaderboardPage = () => {
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
                     <div className="space-y-2">
                         <div className="inline-flex items-center gap-2 px-3 py-1 bg-black text-white rounded-full text-xs font-bold uppercase tracking-widest">
-                            <Sparkles className="w-3 h-3 text-[#D5EF36]" />
+                            <Sparkles className="w-3 h-3 text-primary" />
                             <span>Election Analysis</span>
                         </div>
                         <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9] font-[panchang,sans-serif]">
@@ -65,7 +65,7 @@ const LeaderboardPage = () => {
                         {/* Bottom Row: Widgets */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-auto lg:h-[280px]">
                             {/* Champion Status Widget */}
-                            <div className="bg-[#D5EF36] rounded-[32px] p-8 flex flex-col justify-between relative overflow-hidden group cursor-pointer hover:scale-[1.02] transition-transform shadow-xl shadow-black/5 min-h-[280px] lg:min-h-0 h-full">
+                            <div className="bg-primary rounded-[32px] p-8 flex flex-col justify-between relative overflow-hidden group cursor-pointer hover:scale-[1.02] transition-transform shadow-xl shadow-black/5 min-h-[280px] lg:min-h-0 h-full">
                                 <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
                                     <Crown className="w-32 h-32 rotate-12" />
                                 </div>
@@ -79,12 +79,12 @@ const LeaderboardPage = () => {
                             </div>
 
                             {/* Branding / Logo Widget */}
-                            <div className="bg-white rounded-[32px] p-8 flex flex-col items-center justify-center text-center relative overflow-hidden min-h-[280px] lg:min-h-0 h-full shadow-xl shadow-black/5 border border-neutral-100 group">
+                            <div className="bg-white rounded-[32px] p-8 flex flex-col items-center justify-center text-center relative overflow-hidden min-h-[280px] lg:min-h-0 h-full shadow-xl shadow-black/5 border border-neutral-100 group cursor-pointer hover:scale-[1.02] transition-transform">
                                 <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-20" />
 
                                 <div className="relative z-10 flex flex-col items-center gap-6">
                                     <div className="w-24 h-24 rounded-3xl bg-black flex items-center justify-center -rotate-6 group-hover:rotate-12 transition-transform duration-500 shadow-2xl shadow-neutral-200">
-                                        <Sparkles className="text-[#D5EF36] w-12 h-12" />
+                                        <Sparkles className="text-primary w-12 h-12" />
                                     </div>
 
                                     <div className="space-y-1">
