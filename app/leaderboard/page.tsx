@@ -7,6 +7,11 @@ import VotersList from '@/components/leaderboard/VotersList';
 import { Crown, Sparkles } from 'lucide-react';
 import BackButton from '@/components/ui/BackButton';
 import Link from 'next/link';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { SplitText } from 'gsap/all';
+
+
 
 const LeaderboardPage = () => {
     // Mock Data
@@ -14,6 +19,69 @@ const LeaderboardPage = () => {
         { rank: 1, name: "Bharath Krishna A B", votes: 452, percentage: 65, imageUrl: "/images/candidate1.jpeg" },
         { rank: 2, name: "Navaneeth R", votes: 243, percentage: 35, imageUrl: "/images/candidate2.png" },
     ];
+
+
+
+    useGSAP(() => {
+        const tl = gsap.timeline();
+
+        tl.from(".leaderboard-column",{
+            opacity: 0,
+            ease: "power2.inOut",
+            duration: .5,
+            stagger: .2
+        }).from(".leaderboard-card", {
+            opacity: 0,
+            y: 20,
+            ease: "power2.inOut",
+            duration: .3,
+            stagger: .2
+        },"-=.4").from(".leaderboard-cards-left", {
+            opacity: 0,
+            x: -20,
+            ease: "power2.inOut",
+            duration: .3,
+            stagger: .2
+        }).from(".leaderboard-cards-right", {
+            opacity: 0,
+            y: 20,
+            ease: "power2.inOut",
+            duration: .3,
+            stagger: .2
+        })
+
+        const tl2 = gsap.timeline({
+            delay: .5
+        });
+
+        const LeaderboardHeading = SplitText.create(".leaderboard-heading",{
+            type: "chars",
+        })
+
+        tl2.from(LeaderboardHeading.chars,{
+            opacity: 0,
+            scale: 1.2,
+            y: 20,
+            ease: "power2.inOut",
+            duration: .3,
+            stagger: .05
+        })
+
+        tl2.from(".leaderboard-tag",{
+            opacity: 0,
+            ease: "power2.inOut",
+            duration: .4,
+        })
+
+        tl2.from(".leaderboard-subline",{
+            x: 40,
+            opacity: 0,
+            ease: "power2.inOut",
+            duration: .4,
+        },"-=.2")
+
+    })
+    
 
     return (
         <div className="min-h-screen bg-surface text-neutral-900 font-sans selection:bg-primary selection:text-black">
@@ -28,17 +96,17 @@ const LeaderboardPage = () => {
                 {/* Header Section */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
                     <div className="space-y-2">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-black text-white rounded-full text-xs font-bold uppercase tracking-widest">
+                        <div className="leaderboard-tag inline-flex items-center gap-2 px-3 py-1 bg-black text-white rounded-full text-xs font-bold uppercase tracking-widest">
                             <Sparkles className="w-3 h-3 text-primary" />
                             <span>Election Analysis</span>
                         </div>
-                        <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9] font-clash-display">
+                        <h1 className="leaderboard-heading text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9] font-clash-display">
                             Overall Standings
                         </h1>
                     </div>
 
                     <div className="text-right hidden md:block">
-                        <p className="text-neutral-500 font-medium max-w-xs ml-auto">
+                        <p className="leaderboard-subline text-neutral-500 font-medium max-w-xs ml-auto">
                             Comprehensive analysis of total valid votes. A detailed breakdown of the final election processing.
                         </p>
                     </div>
@@ -52,8 +120,8 @@ const LeaderboardPage = () => {
                         {/* Leaderboard Section */}
                         <div className="flex flex-col gap-4">
                             <div className="flex items-center justify-between px-2">
-                                <span className="text-xs font-bold uppercase tracking-widest text-neutral-400">Final Ranking</span>
-                                <span className="text-xs font-bold uppercase tracking-widest text-neutral-400">Total Valid Votes</span>
+                                <span className="leaderboard-column text-xs font-bold uppercase tracking-widest text-neutral-400">Final Ranking</span>
+                                <span className="leaderboard-column text-xs font-bold uppercase tracking-widest text-neutral-400">Total Valid Votes</span>
                             </div>
 
                             {LEADERBOARD_DATA.map((candidate) => (
@@ -64,12 +132,13 @@ const LeaderboardPage = () => {
                                     votes={candidate.votes}
                                     percentage={candidate.percentage}
                                     imageUrl={candidate.imageUrl}
+
                                 />
                             ))}
                         </div>
 
                         {/* Bottom Row: Widgets */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-auto lg:h-[280px]">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-auto lg:h-[280px] leaderboard-cards-left">
                             {/* Champion Status Widget */}
                             <div className="bg-primary rounded-[32px] p-8 flex flex-col justify-between relative overflow-hidden group cursor-pointer hover:scale-[1.02] transition-transform shadow-xl shadow-black/5 min-h-[280px] lg:min-h-0 h-full">
                                 <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -106,7 +175,7 @@ const LeaderboardPage = () => {
                     {/* Right Column: Voters List (4 cols) */}
                     <div className="lg:col-span-4 h-full">
                         {/* Sticky sidebar that takes available height */}
-                        <div className="lg:sticky lg:top-24 h-[500px] lg:h-[56.5vh] min-h-[400px]">
+                        <div className="leaderboard-cards-right lg:sticky lg:top-24 h-[500px] lg:h-[56.5vh] min-h-[400px]">
                             <VotersList />
                         </div>
                     </div>
