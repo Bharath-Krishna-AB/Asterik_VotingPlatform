@@ -25,7 +25,7 @@ const LeaderboardPage = () => {
     useGSAP(() => {
         const tl = gsap.timeline();
 
-        tl.from(".leaderboard-column",{
+        tl.from(".leaderboard-column", {
             opacity: 0,
             ease: "power2.inOut",
             duration: .5,
@@ -36,7 +36,7 @@ const LeaderboardPage = () => {
             ease: "power2.inOut",
             duration: .3,
             stagger: .2
-        },"-=.4").from(".leaderboard-cards-left", {
+        }, "-=.4").from(".leaderboard-cards-left", {
             opacity: 0,
             x: -20,
             ease: "power2.inOut",
@@ -54,11 +54,11 @@ const LeaderboardPage = () => {
             delay: .5
         });
 
-        const LeaderboardHeading = SplitText.create(".leaderboard-heading",{
+        const LeaderboardHeading = SplitText.create(".leaderboard-heading", {
             type: "chars",
         })
 
-        tl2.from(LeaderboardHeading.chars,{
+        tl2.from(LeaderboardHeading.chars, {
             opacity: 0,
             scale: 1.2,
             y: 20,
@@ -67,21 +67,21 @@ const LeaderboardPage = () => {
             stagger: .05
         })
 
-        tl2.from(".leaderboard-tag",{
+        tl2.from(".leaderboard-tag", {
             opacity: 0,
             ease: "power2.inOut",
             duration: .4,
         })
 
-        tl2.from(".leaderboard-subline",{
+        tl2.from(".leaderboard-subline", {
             x: 40,
             opacity: 0,
             ease: "power2.inOut",
             duration: .4,
-        },"-=.2")
+        }, "-=.2")
 
     })
-    
+
 
     return (
         <div className="min-h-screen bg-surface text-neutral-900 font-sans selection:bg-primary selection:text-black">
@@ -141,15 +141,34 @@ const LeaderboardPage = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-auto lg:h-[280px] leaderboard-cards-left">
                             {/* Champion Status Widget */}
                             <div className="bg-primary rounded-[32px] p-8 flex flex-col justify-between relative overflow-hidden group cursor-pointer hover:scale-[1.02] transition-transform shadow-xl shadow-black/5 min-h-[280px] lg:min-h-0 h-full">
-                                <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                                    <Crown className="w-32 h-32 rotate-12" />
+                                {/* Background Pattern/Icon */}
+                                <div className="absolute -right-4 -bottom-4 opacity-10 group-hover:opacity-20 transition-opacity transform rotate-12">
+                                    <Crown className="w-48 h-48" />
                                 </div>
-                                <div>
-                                    <h3 className="text-3xl font-black uppercase font-clash-display mb-2 leading-none">Victory Margin</h3>
-                                    <p className="font-medium text-black/80 text-sm mt-4">Current Leader leads by <span className="font-bold">209 votes</span> in the final tally.</p>
+
+                                {/* Header */}
+                                <div className="relative z-10">
+                                    <div className="flex items-center gap-2 mb-2">
+                                        <Crown className="w-5 h-5" />
+                                        <span className="text-xs font-bold uppercase tracking-widest opacity-80">Margin of Victory</span>
+                                    </div>
+                                    <h3 className="text-7xl lg:text-8xl font-black uppercase font-clash-display leading-[0.9] tracking-tighter">
+                                        209
+                                    </h3>
+                                    <p className="text-xl font-bold uppercase tracking-tight mt-1 opacity-90">
+                                        Votes Lead
+                                    </p>
                                 </div>
-                                <div className="flex items-center gap-2 mt-4 font-bold uppercase tracking-wide border-b-2 border-black/20 self-start pb-1 text-xs">
-                                    View Candidate
+
+                                {/* Footer content */}
+                                <div className="relative z-10 mt-auto">
+                                    <p className="text-sm font-medium leading-relaxed opacity-80 max-w-[90%]">
+                                        Current leader is dominating the polls with a significant margin.
+                                    </p>
+
+                                    <div className="inline-flex items-center gap-2 mt-4 font-bold uppercase tracking-wider text-xs border-b-2 border-black/20 pb-1 group-hover:border-black transition-colors">
+                                        View Analysis
+                                    </div>
                                 </div>
                             </div>
 
