@@ -16,16 +16,16 @@ const CandidatePage = () => {
             id: 1,
             name: "Bharath Krishna A B",
             imageUrl: "/images/candidate1.jpeg",
-            description: "A visionary leader committed to fostering innovation and inclusivity. With a strong background in technology and community service, Bharath aims to bridge the gap between students and administration.",
+            description: "A frontend engineer focused on execution, ownership, and real-world impact. I design and ship production-ready interfaces that balance performance, reliability, and clean architecture—from concept to deployment.",
             manifesto: [
-                "Establish a 24/7 student support helpline",
-                "Digitalize campus voting and feedback systems",
-                "Launch a mentorship program for first-year students"
+                "Production-ready. Always.",
+                "Execute fast. Ship responsibly.",
+                "Ownership from day one."
             ],
-            education: "Computer Science Engineering, 3rd Year | MERN Stack Developer | Hackathon Winner",
+            education: "Frontend Stack Developer | Freelance Web Developer | Ideathon & Hackathon Winner | CSE Student | Christ College Of Engineering, Irinjalakuda",
             socials: {
                 linkedin: "https://linkedin.com/in/bharathkrishnaab",
-                github: "https://github.com/bharathkrishnaab"
+                github: "https://github.com/bharath-krishna-ab"
             }
         },
         {
